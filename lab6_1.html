@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            display: block !important;
+        }
+        .myText{
+            display: none;
+        }
+        .title{
+            font-size: 1.5em;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Title #1</div>
+        <div class="myText">just some text #1</div>
+        <div class="title">Title #2</div>
+        <div class="myText">just some text #2</div>
+        <div class="title">Title #3</div>
+        <div class="myText">just some text #3</div>
+    </div>
+    <script>
+        var title = document.querySelectorAll('.title');
+        var text = document.querySelectorAll('.myText')
+        title.forEach(function title(el) {
+            el.addEventListener('click', function next(x) {
+                remover();
+                el.nextElementSibling.classList.toggle('active')
+            })
+        })
+        function remover() {
+            text.forEach(function remove(ele) {
+                ele.classList.remove('active');
+            })
+        }
+    </script>
+</body>
+</html>
